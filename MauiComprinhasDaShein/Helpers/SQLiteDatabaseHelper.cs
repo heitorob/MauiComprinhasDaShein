@@ -17,5 +17,15 @@ namespace MauiComprinhasDaShein.Helpers
             _conn = new SQLiteAsyncConnection(rota);
             _conn.CreateTableAsync<Produto>().Wait();
         }
+
+        public Task<int> Insert(Produto p)
+        {
+            return _conn.InsertAsync(p);
+        }
+
+        public Task<List<Produto>> Update(Produto p)
+        {
+            string sql = "UPDATE Produto SET Descricao=?, Quantidade=?, Preco=? WHERE Id=?";
+        }
     }
 }
