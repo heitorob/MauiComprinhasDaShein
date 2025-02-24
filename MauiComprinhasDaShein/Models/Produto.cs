@@ -7,7 +7,7 @@ using SQLite;
 
 namespace MauiComprinhasDaShein.Models
 {
-    internal class Produto
+    public class Produto
     {
         string _descricao;
 
