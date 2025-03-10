@@ -27,6 +27,8 @@ namespace MauiComprinhasDaShein
         {
             InitializeComponent();
 
+            Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo("pt-BR");
+
             MainPage = new AppShell();
         }
     }
