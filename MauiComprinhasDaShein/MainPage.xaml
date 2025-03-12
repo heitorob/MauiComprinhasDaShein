@@ -2,4 +2,7 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MauiComprinhasDaShein.MainPage">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Lista de Produtos" Clicked="ToolbarItem_Clicked"/>
+    </ContentPage.ToolbarItems>
 </ContentPage>
