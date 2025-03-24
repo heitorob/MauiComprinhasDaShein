@@ -23,13 +23,22 @@ namespace MauiComprinhasDaShein
                 return _db;
             }
         }
+        protected override Window CreateWindow(IActivationState activationState)
+        {
+            var window = base.CreateWindow(activationState);
+
+            window.Width = 500;
+            window.Height = 800;
+
+            return window;
+        }
         public App()
         {
             InitializeComponent();
 
             Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo("pt-BR");
 
-            MainPage = new AppShell();
+            MainPage = new NavigationPage(new Views.ListaProduto());
         }
     }
 }

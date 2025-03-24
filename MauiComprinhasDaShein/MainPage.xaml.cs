@@ -8,18 +8,6 @@ namespace MauiComprinhasDaShein
         {
             InitializeComponent();
         }
-
-        private void ToolbarItem_Clicked(object sender, EventArgs e)
-        {
-            try
-            {
-                Navigation.PushAsync(new ListaProduto());
-            }
-            catch (Exception ex)
-            {
-                DisplayAlert("OPS!!", ex.Message, "OK");
-            }
-        }
     }
 
 }

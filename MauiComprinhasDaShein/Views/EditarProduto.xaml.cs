@@ -31,4 +31,31 @@ public partial class EditarProduto : ContentPage
             await DisplayAlert("Ops", ex.Message, "OK");
         }
     }
+
+    private async void ToolbarItem_Clicked_1(object sender, EventArgs e)
+    {
+		try
+		{
+            Produto p = BindingContext as Produto;
+
+            if (p == null)
+            {
+                await DisplayAlert("Erro", "Nenhum registro selecionado.", "OK");
+                return;
+            }
+
+            bool resposta = await DisplayAlert("Confirmação", "Deseja realmente apagar este registro?", "Sim", "Não");
+
+            if (!resposta)
+                return;
+
+            await App.Db.Delete(p.id);
+            await DisplayAlert("Sucesso!", "Registro Apagado", "OK");
+            await Navigation.PopAsync();
+        }
+		catch (Exception ex)
+		{
+            await DisplayAlert("Ops", ex.Message, "OK");
+        }
+    }
 }

@@ -5,6 +5,7 @@
              Title="{Binding Descricao}">
 
     <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Apagar" Clicked="ToolbarItem_Clicked_1"/>
         <ToolbarItem Text="Salvar" Clicked="ToolbarItem_Clicked" />
     </ContentPage.ToolbarItems>
 
