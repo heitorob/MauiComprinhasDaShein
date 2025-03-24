@@ -1,20 +1,27 @@
 <?xml version="1.0" encoding="utf-8" ?>
+<!-- 
+Página para adicionar um novo produto.
+-->
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MauiComprinhasDaShein.Views.NovoProduto"
              Title="Novo Produto">
-    
+
     <ContentPage.ToolbarItems>
+        <!-- Botão para salvar o novo produto -->
         <ToolbarItem Text="Salvar" Clicked="ToolbarItem_Clicked" />
     </ContentPage.ToolbarItems>
 
     <VerticalStackLayout Spacing="10" Padding="10">
+        <!-- Campo para inserir a descrição do produto -->
         <Label Text="Descrição do Produto:" />
         <Entry x:Name="txt_descricao" />
 
+        <!-- Campo para inserir a quantidade do produto -->
         <Label Text="Quantidade:" />
         <Entry x:Name="txt_quantidade" Keyboard="Numeric" />
 
+        <!-- Campo para inserir o preço unitário do produto -->
         <Label Text="Preço Unitário:" />
         <Entry x:Name="txt_preco" Keyboard="Numeric" />
     </VerticalStackLayout>

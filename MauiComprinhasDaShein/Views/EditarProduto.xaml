@@ -1,21 +1,29 @@
 <?xml version="1.0" encoding="utf-8" ?>
+<!--
+Esta é a View para edição de um produto no aplicativo MauiComprinhasDaShein.
+Ela permite modificar a descrição, quantidade e preço de um produto existente.
+-->
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MauiComprinhasDaShein.Views.EditarProduto"
              Title="{Binding Descricao}">
 
+    <!-- Barra de ferramentas com opções de apagar e salvar -->
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Apagar" Clicked="ToolbarItem_Clicked_1"/>
         <ToolbarItem Text="Salvar" Clicked="ToolbarItem_Clicked" />
     </ContentPage.ToolbarItems>
 
     <VerticalStackLayout Spacing="10" Padding="10">
+        <!-- Campo para editar a descrição do produto -->
         <Label Text="Descrição do Produto:" />
         <Entry x:Name="txt_descricao" Text="{Binding descricao}" />
 
+        <!-- Campo para editar a quantidade -->
         <Label Text="Quantidade:" />
         <Entry x:Name="txt_quantidade" Text="{Binding Quantidade}" Keyboard="Numeric" />
 
+        <!-- Campo para editar o preço unitário -->
         <Label Text="Preço Unitário:" />
         <Entry x:Name="txt_preco" Text="{Binding Preco}" Keyboard="Numeric" />
     </VerticalStackLayout>

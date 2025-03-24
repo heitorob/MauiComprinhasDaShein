@@ -5,15 +5,22 @@ using MauiComprinhasDaShein.Models;
 
 public partial class ListaProduto : ContentPage
 {
+    /// <summary>
+    /// Classe responsável pelo gerenciamento da lista de produtos na interface.
+    /// </summary>
     ObservableCollection<Produto> lista = new ObservableCollection<Produto>();
 
-	public ListaProduto()
-	{
-		InitializeComponent();
+    public ListaProduto()
+    {
+        InitializeComponent();
 
+        // Define a coleção de produtos como fonte de dados para a ListView
         lst_produtos.ItemsSource = lista;
-	}
+    }
 
+    /// <summary>
+    /// Método acionado quando a página aparece na tela. Atualiza a lista de produtos.
+    /// </summary>
     protected async override void OnAppearing()
     {
         try
@@ -30,6 +37,9 @@ public partial class ListaProduto : ContentPage
         }
     }
 
+    /// <summary>
+    /// Método acionado ao clicar no botão de adicionar um novo produto.
+    /// </summary>
     private void ToolbarItem_Clicked(object sender, EventArgs e)
     {
         try
@@ -42,6 +52,9 @@ public partial class ListaProduto : ContentPage
         }
     }
 
+    /// <summary>
+    /// Método acionado ao clicar no botão de soma. Calcula o total dos produtos na lista.
+    /// </summary>
     private void ToolbarItem_Clicked_1(object sender, EventArgs e)
     {
         double soma = lista.Sum(i => i.Total);
@@ -51,6 +64,9 @@ public partial class ListaProduto : ContentPage
         DisplayAlert("Total dos Produtos", msg, "OK");
     }
 
+    /// <summary>
+    /// Método acionado quando o usuário digita na barra de pesquisa. Filtra os produtos.
+    /// </summary>
     private async void txt_search_TextChanged(object sender, TextChangedEventArgs e)
     {
         try
@@ -75,6 +91,9 @@ public partial class ListaProduto : ContentPage
         }
     }
 
+    /// <summary>
+    /// Método acionado quando a lista de produtos é atualizada manualmente pelo usuário.
+    /// </summary>
     private async void lst_produtos_Refreshing(object sender, EventArgs e)
     {
         try
@@ -95,6 +114,9 @@ public partial class ListaProduto : ContentPage
         }
     }
 
+    /// <summary>
+    /// Método acionado quando um item da lista é selecionado. Abre a tela de edição do produto.
+    /// </summary>
     private void lst_produtos_ItemSelected(object sender, SelectedItemChangedEventArgs e)
     {
         try
@@ -109,29 +131,6 @@ public partial class ListaProduto : ContentPage
         catch (Exception ex)
         {
             DisplayAlert("Ops", ex.Message, "OK");
-        }
-    }
-
-    private async void MenuItem_Clicked(object sender, EventArgs e)
-    {
-        try
-        {
-            MenuItem selecionado = sender as MenuItem;
-
-            Produto p = selecionado.BindingContext as Produto;
-
-            bool confirm = await DisplayAlert(
-                "Tem Certeza?", $"Remover {p.descricao}", "Sim", "Não");
-        
-            if (confirm)
-            {
-                await App.Db.Delete(p.id);
-                lista.Remove(p);
-            }
-        }
-        catch (Exception ex)
-        {
-            await DisplayAlert("Ops", ex.Message, "OK");
         }
     }
 }
