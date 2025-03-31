@@ -28,13 +28,6 @@ dotnet build
 dotnet run
 ```
 
-## Capturas de Tela
-![Tela Inicial](images/tela_inicial.png)
-![Tela do Carrinho](images/tela_carrinho.png)
-
-## Demonstração
-![Demonstração](images/demo.gif)
-
 ## Estrutura do Código
 ### Banco de Dados
 O aplicativo utiliza SQLite para armazenar os produtos cadastrados.
