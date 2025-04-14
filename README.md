@@ -14,8 +14,9 @@ MauiComprinhasDaShein é um aplicativo desenvolvido com .NET MAUI que funciona c
 ### Clone o repositório
 ```sh
 git clone https://github.com/seu-usuario/MauiComprinhasDaShein.git
-```
 cd MauiComprinhasDaShein
+```
+
 
 ### Restaure os pacotes
 ```sh
